@@ -109,11 +109,12 @@ h1{font-size:clamp(38px,7vw,72px);font-weight:800;letter-spacing:-.02em;}
 .fields label{display:block;font-size:13px;font-weight:600;letter-spacing:.02em;color:#dcdcdc;}
 .req{color:var(--accent);}
 .fields input{
-  margin-top:7px;width:100%;background:#111;border:1px solid #3a3a3a;color:#fff;
+  margin-top:7px;width:100%;background:#1a1a1a;border:1px solid #4a4a4a;color:#fff;
   font-family:inherit;font-size:16px;padding:14px;border-radius:0;
 }
 .fields input:focus{outline:none;border-color:var(--accent);}
-.fields input::placeholder{color:#6b6b6b;}
+.fields input::placeholder{color:#a3a3a3;}
+.fields input:-webkit-autofill{-webkit-text-fill-color:#fff;-webkit-box-shadow:0 0 0 1000px #1a1a1a inset;}
 .consent{font-size:13px;color:#9a9a9a;margin:20px 0;max-width:60ch;}
 .meldung{font-size:15px;font-weight:600;margin:16px 0 0;min-height:1.4em;}
 .meldung.ok{color:#7ddc9a;}
