@@ -205,4 +205,16 @@
       if (f) setTimeout(function () { f.focus({ preventScroll: true }); }, 600);
     });
   }
+
+  // Abschnitte unterhalb des Scanners sanft einblenden. Ohne JS und bei
+  // reduzierter Bewegung bleibt alles sofort sichtbar.
+  var abschnitte = [].slice.call(document.querySelectorAll('main > section')).slice(1);
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var beobachter = new IntersectionObserver(function (eintraege) {
+      eintraege.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); beobachter.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -12% 0px' });
+    abschnitte.forEach(function (s) { s.classList.add('reveal'); beobachter.observe(s); });
+  }
 })();
