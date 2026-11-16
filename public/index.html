@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Antwortkarte scannen – fuks e.V. | Studentische Unternehmensberatung am KIT</title>
-<meta name="description" content="Antwortkarte ausfüllen, abfotografieren, senden. Fertig – kein Brief, kein Porto. fuks e.V., die älteste studentische Unternehmensberatung in Karlsruhe.">
+<title>Noch nicht überzeugt? – fuks e.V. | Studentische Unternehmensberatung am KIT</title>
+<meta name="description" content="fuks e.V. ist die älteste studentische Unternehmensberatung in Karlsruhe. Antwortkarte abfotografieren und direkt an uns senden – kein Brief, kein Porto.">
 <meta name="theme-color" content="#EB5E28">
 <!-- Nicht indexieren: die Seite ist nur über den Link im Brief erreichbar. -->
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
@@ -18,7 +18,7 @@
 </head>
 <body>
 
-<a class="skip" href="#kartenform">Direkt zum Scannen</a>
+<a class="skip" href="#senden">Direkt zur Antwortkarte</a>
 
 <header class="topbar">
   <div class="wrap topbar-inner">
@@ -34,90 +34,21 @@
 
 <main>
 
-  <!-- ===== Scannen: das ist der Zweck dieser Seite ===== -->
-  <section class="scanner" id="scannen">
-    <div class="wrap">
-      <p class="eyebrow">fuks e.V. · Antwortkarte</p>
-      <h1 class="scan-title">Antwortkarte&nbsp;scannen</h1>
-      <p class="scan-lead">
-        Karte ausgefüllt? Abfotografieren, senden – fertig. <strong>Kein Brief, kein Porto.</strong>
-      </p>
-
-      <ol class="scan-steps">
-        <li><span class="s-num">1</span><div><strong>Karte ausfüllen</strong><small>von Hand, wie gedruckt</small></div></li>
-        <li><span class="s-num">2</span><div><strong>Foto machen</strong><small>ganze Karte, gerade, gut lesbar</small></div></li>
-        <li><span class="s-num">3</span><div><strong>Senden</strong><small>Firma eintragen, abschicken</small></div></li>
-      </ol>
-
-      <form id="kartenform" novalidate>
-        <div class="shot" id="shot">
-          <img id="vorschau" alt="Vorschau der Antwortkarte" hidden>
-          <video id="kamera" playsinline muted hidden></video>
-          <div id="shot-empty" class="shot-empty">
-            <svg class="card-icon" viewBox="0 0 120 170" aria-hidden="true">
-              <rect x="3" y="3" width="114" height="164" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="10 7"/>
-              <line x1="16" y1="34" x2="104" y2="34" stroke="currentColor" stroke-width="3"/>
-              <line x1="16" y1="56" x2="86" y2="56" stroke="currentColor" stroke-width="3"/>
-              <line x1="16" y1="74" x2="96" y2="74" stroke="currentColor" stroke-width="3"/>
-              <line x1="16" y1="92" x2="78" y2="92" stroke="currentColor" stroke-width="3"/>
-              <line x1="16" y1="110" x2="92" y2="110" stroke="currentColor" stroke-width="3"/>
-              <line x1="16" y1="128" x2="70" y2="128" stroke="currentColor" stroke-width="3"/>
-            </svg>
-            <p class="shot-main">Antwortkarte hier fotografieren</p>
-            <p class="shot-sub">Die ganze Karte ins Bild, gerade halten, Licht an.</p>
-          </div>
-        </div>
-
-        <input id="foto" name="foto" type="file" accept="image/*" capture="environment" hidden>
-
-        <div class="shot-actions">
-          <button type="button" class="btn btn-accent btn-big" id="btn-kamera">
-            <span class="cam-dot" aria-hidden="true"></span> Kamera öffnen
-          </button>
-          <button type="button" class="btn btn-ghost" id="btn-datei">Bild auswählen</button>
-          <button type="button" class="btn btn-accent btn-big" id="btn-ausloesen" hidden>Auslösen</button>
-          <button type="button" class="btn btn-ghost" id="btn-nochmal" hidden>Neu aufnehmen</button>
-        </div>
-
-        <div class="fields">
-          <label for="f-firma">Firma <span class="req">*</span></label>
-          <input id="f-firma" name="firma" autocomplete="organization" required placeholder="Musterfirma GmbH">
-          <label for="f-name">Name, Funktion</label>
-          <input id="f-name" name="name" autocomplete="name" placeholder="Vor- und Nachname">
-          <label for="f-mail">Telefon oder E-Mail</label>
-          <input id="f-mail" name="email" autocomplete="email" inputmode="email" placeholder="für die Rückfrage">
-        </div>
-
-        <p class="consent">
-          Das Foto und Ihre Angaben werden ausschließlich zur Bearbeitung Ihrer Antwort verwendet
-          und nicht an Dritte weitergegeben.
-        </p>
-
-        <button type="submit" class="btn btn-accent btn-big" id="btn-senden" disabled>Antwortkarte senden</button>
-        <p id="meldung" class="meldung" role="status"></p>
-      </form>
-
-      <p class="postal">
-        Lieber klassisch? Rücksendung per Post oder als Foto per E-Mail an
-        <a href="mailto:kontakt@fuks.org">kontakt@fuks.org</a>.
-      </p>
-    </div>
-  </section>
-
-  <!-- ===== Und wen das noch nicht überzeugt ===== -->
   <section class="hero">
     <img class="hero-mark" src="/assets/fuks-kopf.svg" alt="" aria-hidden="true">
     <div class="wrap hero-inner">
       <p class="eyebrow">Studentische Unternehmensberatung am KIT</p>
-      <h2 class="hero-title">Noch nicht überzeugt?</h2>
+      <h1>Noch nicht überzeugt?</h1>
       <p class="lead">
-        Verständlich – Sie kennen uns nicht, und Beratung ist Vertrauenssache. Deshalb in Kurzform,
-        wer wir sind, was wir können und wie ein Projekt bei uns abläuft.
+        Sie haben unseren Brief gelesen und überlegen noch. Verständlich – Sie kennen uns nicht,
+        und Beratung ist Vertrauenssache. Deshalb hier in Kurzform, wer wir sind, was wir können
+        und wie ein Projekt bei uns abläuft.
       </p>
       <div class="cta-row">
-        <a class="btn btn-dark" href="#scannen">Antwortkarte scannen</a>
+        <a class="btn btn-dark" href="#senden">Antwortkarte senden</a>
         <a class="btn btn-light" href="#warum">Warum fuks?</a>
       </div>
+      <p class="hint">Karte abfotografieren, senden, fertig – kein Brief, kein Porto.</p>
     </div>
   </section>
 
@@ -181,6 +112,66 @@
     </div>
   </section>
 
+  <section class="send" id="senden">
+    <div class="wrap">
+      <h2 class="eyebrow-h">Antwortkarte senden</h2>
+      <p class="send-lead">
+        Karte ausgefüllt? Dann fotografieren Sie sie einfach ab und schicken Sie das Foto hier
+        hoch. Wir melden uns wie auf der Karte angekreuzt.
+      </p>
+
+      <ol class="send-steps">
+        <li>Karte ausfüllen</li>
+        <li>Foto machen</li>
+        <li>Senden</li>
+      </ol>
+
+      <form id="kartenform" novalidate>
+        <div class="shot">
+          <img id="vorschau" alt="Vorschau der Antwortkarte" hidden>
+          <div id="shot-empty" class="shot-empty">
+            <p>Noch kein Foto</p>
+            <p class="shot-sub">Gut lesbar, gerade und vollständig im Bild.</p>
+          </div>
+          <input id="foto" name="foto" type="file" accept="image/*" capture="environment" hidden>
+          <video id="kamera" playsinline muted hidden></video>
+        </div>
+
+        <div class="shot-actions">
+          <button type="button" class="btn btn-dark" id="btn-kamera">Foto aufnehmen</button>
+          <button type="button" class="btn btn-light" id="btn-datei">Bild auswählen</button>
+          <button type="button" class="btn btn-light" id="btn-ausloesen" hidden>Auslösen</button>
+          <button type="button" class="btn btn-light" id="btn-nochmal" hidden>Neu aufnehmen</button>
+        </div>
+
+        <div class="fields">
+          <label>Firma <span class="req">*</span>
+            <input name="firma" autocomplete="organization" required placeholder="Musterfirma GmbH">
+          </label>
+          <label>Name, Funktion
+            <input name="name" autocomplete="name" placeholder="Vor- und Nachname">
+          </label>
+          <label>Telefon oder E-Mail
+            <input name="email" autocomplete="email" placeholder="für die Rückfrage">
+          </label>
+        </div>
+
+        <p class="consent">
+          Das Foto und Ihre Angaben werden ausschließlich zur Bearbeitung Ihrer Antwort verwendet
+          und nicht an Dritte weitergegeben.
+        </p>
+
+        <button type="submit" class="btn btn-dark btn-wide" id="btn-senden" disabled>Senden</button>
+        <p id="meldung" class="meldung" role="status"></p>
+      </form>
+
+      <p class="postal">
+        Lieber klassisch? Rücksendung per Post oder als Foto per E-Mail an
+        <a href="mailto:kontakt@fuks.org">kontakt@fuks.org</a>.
+      </p>
+    </div>
+  </section>
+
   <section class="block contact">
     <div class="wrap cols cols-tight">
       <div class="item">
@@ -209,11 +200,6 @@
     <p>fuks e.V. · Studentische Unternehmensberatung am KIT · Waldhornstraße 27 · 76131 Karlsruhe</p>
   </div>
 </footer>
-
-<!-- Auf dem Handy dauerhaft sichtbar: der Weg zum Scanner -->
-<a class="scanbar" href="#scannen" id="scanbar">
-  <span class="cam-dot" aria-hidden="true"></span> Antwortkarte scannen
-</a>
 
 <script src="/app.js" defer></script>
 </body>

@@ -177,7 +177,6 @@
           btnSenden.hidden = true;
           btnKamera.hidden = true;
           btnNochmal.hidden = true;
-          if (scanbar) scanbar.hidden = true;
         } else {
           setzeMeldung((d && d.error) || 'Das hat nicht geklappt. Bitte erneut versuchen.', 'err');
           btnSenden.disabled = false;
@@ -190,19 +189,4 @@
   });
 
   window.addEventListener('pagehide', stoppeKamera);
-
-  // Der Balken unten ist nur der Weg zum Scanner: steht man schon dort, verschwindet er.
-  var scanbar = document.getElementById('scanbar');
-  var scanSection = document.getElementById('scannen');
-  if (scanbar && scanSection) {
-    if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (eintraege) {
-        scanbar.hidden = eintraege[0].isIntersecting || gesendet;
-      }, { rootMargin: '-35% 0px -35% 0px' }).observe(scanSection);
-    }
-    scanbar.addEventListener('click', function () {
-      var f = document.getElementById('f-firma');
-      if (f) setTimeout(function () { f.focus({ preventScroll: true }); }, 600);
-    });
-  }
 })();
