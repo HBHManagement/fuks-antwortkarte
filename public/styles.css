@@ -6,10 +6,8 @@
   --accent:#EB5E28;
   --accent-dark:#c94a19;
   --grey:#F2F2F2;
-  --soft:#f7f7f7;
   --line:#E6E6E6;
   --muted:#555;
-  --shadow:0 1px 2px rgba(0,0,0,.04);
   --pad:clamp(18px,5vw,40px);
   --w:1120px;
 }
@@ -35,24 +33,30 @@ h1,h2,h3{font-weight:600;line-height:1.2;margin:0;}
 .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:12px;padding-bottom:12px;}
 .brand img{width:132px;height:auto;}
 .topnav{display:flex;gap:22px;font-size:14px;font-weight:500;}
-.topnav a:hover{color:var(--accent);}
 
-/* ================= 1. Antwortkarte scannen ================= */
+/* ================= Antwortkarte scannen ================= */
 .scanner{
   background:#fff;
   border-bottom:1px solid var(--line);
-  padding:clamp(26px,6vw,52px) 0 clamp(30px,5vw,52px);
+  padding:clamp(26px,6vw,56px) 0 clamp(34px,6vw,64px);
 }
 .scanner .wrap{max-width:660px;}
 .eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 12px;}
-.scan-title{font-size:clamp(34px,9vw,56px);font-weight:800;letter-spacing:-.02em;line-height:1.05;}
+.scan-title{
+  font-size:clamp(34px,9vw,56px);font-weight:800;letter-spacing:-.02em;line-height:1.05;
+}
 .scan-lead{margin:14px 0 0;font-size:clamp(16px,4vw,19px);}
 .scan-lead strong{font-weight:700;}
 
+/* Drei Schritte – gross und klar */
 .scan-steps{
-  list-style:none;padding:0;margin:24px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
+  list-style:none;padding:0;margin:26px 0 26px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
 }
-.scan-steps li{display:flex;align-items:center;gap:10px;background:var(--soft);border:1px solid var(--line);padding:12px;}
+.scan-steps li{
+  display:flex;align-items:center;gap:10px;
+  background:var(--grey);padding:12px 12px;
+}
 .scan-steps .s-num{
   flex:0 0 28px;height:28px;display:flex;align-items:center;justify-content:center;
   background:var(--accent);color:#fff;font-weight:800;font-size:15px;
@@ -60,6 +64,7 @@ h1,h2,h3{font-weight:600;line-height:1.2;margin:0;}
 .scan-steps strong{display:block;font-size:14px;font-weight:700;line-height:1.25;}
 .scan-steps small{display:block;font-size:12px;color:#555;line-height:1.3;}
 
+/* Fotoflaeche */
 .shot{
   position:relative;background:#fafafa;border:3px dashed #b9b9b9;
   aspect-ratio:3/4;max-height:60vh;
@@ -72,11 +77,12 @@ h1,h2,h3{font-weight:600;line-height:1.2;margin:0;}
 .shot-main{margin:0;font-weight:700;color:#333;font-size:16px;}
 .shot-sub{margin:6px 0 0;font-size:13px;color:#6f6f6f;}
 
+/* Knoepfe – eckig wie auf fuks.org */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:10px;
   border:0;border-radius:0;cursor:pointer;text-align:center;
   font-family:inherit;font-size:16px;font-weight:500;line-height:1;
-  padding:16px 22px;transition:background .15s ease,color .15s ease,transform .15s ease,box-shadow .15s ease;
+  padding:16px 22px;transition:background .15s ease,color .15s ease;
 }
 .btn-accent{background:var(--accent);color:#fff;font-weight:700;}
 .btn-accent:hover{background:var(--accent-dark);color:#fff;}
@@ -88,8 +94,10 @@ h1,h2,h3{font-weight:600;line-height:1.2;margin:0;}
 .btn-ghost:hover{background:#000;color:#fff;}
 .btn-big{width:100%;min-height:62px;font-size:17px;padding:20px 22px;font-weight:700;}
 .btn[disabled]{opacity:.4;cursor:not-allowed;}
-.cam-dot{flex:0 0 14px;width:14px;height:14px;border-radius:50%;background:currentColor;
-  box-shadow:0 0 0 3px rgba(255,255,255,.35);display:inline-block;}
+.cam-dot{
+  flex:0 0 14px;width:14px;height:14px;border-radius:50%;
+  background:currentColor;box-shadow:0 0 0 3px rgba(255,255,255,.35);display:inline-block;
+}
 .btn-ghost .cam-dot{box-shadow:0 0 0 3px rgba(0,0,0,.15);}
 .shot-actions{display:grid;gap:10px;margin:14px 0 30px;}
 
@@ -109,7 +117,7 @@ h1,h2,h3{font-weight:600;line-height:1.2;margin:0;}
 .postal{margin:30px 0 0;font-size:14px;color:var(--muted);}
 .postal a{text-decoration:underline;}
 
-/* Der Balken unten am Handy: immer sichtbarer Weg zum Scanner */
+/* Balken unten am Handy: immer sichtbarer Weg zum Scanner */
 .scanbar{
   display:none;position:fixed;left:0;right:0;bottom:0;z-index:30;
   background:#000;color:#fff;text-align:center;
@@ -119,99 +127,66 @@ h1,h2,h3{font-weight:600;line-height:1.2;margin:0;}
 .scanbar .cam-dot{background:var(--accent);box-shadow:0 0 0 3px rgba(235,94,40,.35);}
 .scanbar:active{background:#1a1a1a;}
 
-/* ================= 2. Überzeugungsteil ================= */
-/* Schwarzer Streifen: macht den Weg zu den Argumenten unübersehbar */
-.convince-strip{
-  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;
-  background:#000;color:#fff;padding:18px var(--pad);font-size:16px;font-weight:500;
-  transition:background .15s ease;
-}
-.convince-strip strong{color:var(--accent);font-weight:800;}
-.convince-strip .strip-arrow{font-size:18px;line-height:1;}
-.convince-strip:hover{background:var(--accent-dark);color:#fff;}
-.convince-strip:hover strong{color:#fff;}
-
-.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:#fff;}
-.hero::before{content:"";position:absolute;left:0;top:0;width:100%;height:5px;background:var(--accent);}
-.hero-mark{position:absolute;right:-30px;top:30px;width:min(52vw,470px);opacity:.07;pointer-events:none;}
-.hero-inner{position:relative;padding-top:clamp(44px,8vw,86px);padding-bottom:clamp(44px,8vw,86px);max-width:900px;}
-.hero-title{font-size:clamp(34px,7vw,68px);font-weight:800;letter-spacing:-.025em;line-height:1.02;}
-.lead{margin:22px 0 0;font-size:clamp(16px,2.2vw,20px);max-width:62ch;color:#1a1a1a;}
-.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;}
+/* ================= Überzeugungsteil ================= */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);}
+.hero-mark{position:absolute;right:-40px;top:24px;width:min(46vw,420px);opacity:.05;pointer-events:none;}
+.hero-inner{position:relative;padding-top:clamp(44px,8vw,88px);padding-bottom:clamp(44px,8vw,88px);max-width:860px;}
+.hero-title{font-size:clamp(32px,6vw,60px);font-weight:800;letter-spacing:-.02em;}
+.lead{margin:20px 0 0;font-size:clamp(16px,2vw,19px);max-width:60ch;color:#1a1a1a;}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;}
 
 .facts{background:var(--grey);padding:clamp(38px,7vw,72px) 0;}
 .facts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-.fact{display:flex;flex-direction:column;gap:4px;background:#fff;border-top:4px solid var(--accent);padding:22px 22px 20px;box-shadow:var(--shadow);}
-.num{font-size:clamp(36px,5.5vw,56px);font-weight:800;line-height:1;letter-spacing:-.02em;color:var(--ink);}
-.lbl{font-size:14px;color:#333;font-weight:500;}
+.fact{display:flex;flex-direction:column;gap:4px;}
+.num{font-size:clamp(34px,5.5vw,54px);font-weight:800;line-height:1;letter-spacing:-.02em;}
+.lbl{font-size:14px;color:#333;}
 .facts-text{margin:34px 0 0;max-width:74ch;font-size:17px;}
 
-.block{padding:clamp(46px,7vw,86px) 0;}
-.block-alt{background:var(--soft);}
+.block{padding:clamp(42px,7vw,80px) 0;}
+.block-alt{background:#fafafa;}
 .eyebrow-h{
-  font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);
-  font-weight:800;padding-bottom:10px;border-bottom:3px solid var(--accent);
-  display:inline-block;margin-bottom:38px;
+  font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);
+  font-weight:700;padding-bottom:10px;border-bottom:2px solid var(--accent);
+  display:inline-block;margin-bottom:36px;
 }
-.cols{display:grid;grid-template-columns:repeat(2,1fr);gap:20px 22px;}
-.item{
-  background:#fff;border:1px solid var(--line);border-left:4px solid var(--accent);
-  padding:20px 22px;box-shadow:var(--shadow);
-  transition:transform .18s ease,box-shadow .18s ease;
-}
-.item:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.07);}
+.cols{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 40px;}
+.item{border-left:3px solid var(--accent);padding-left:18px;}
 .item h3{font-size:18px;margin-bottom:6px;}
 .item p{margin:0;color:#333;font-size:15px;}
 
-.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:16px;}
-.steps li{background:#fff;border:1px solid var(--line);border-top:4px solid var(--accent);padding:18px 16px;box-shadow:var(--shadow);}
-.step-num{
-  display:inline-flex;align-items:center;justify-content:center;
-  width:34px;height:34px;background:var(--accent);color:#fff;font-weight:800;font-size:17px;
-  margin-bottom:12px;line-height:1;
-}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:22px;}
+.steps li{border-top:2px solid var(--accent);padding-top:14px;}
+.step-num{font-size:34px;font-weight:800;color:var(--accent);line-height:1;display:block;margin-bottom:8px;}
 .steps h3{font-size:15px;font-weight:700;margin-bottom:4px;}
 .steps p{margin:0;font-size:13px;color:#444;}
-
-.clients .clientline{
-  margin:0;background:#fff;border:1px solid var(--line);border-left:4px solid var(--accent);
-  padding:24px 26px;font-size:clamp(15px,2vw,18px);font-weight:600;letter-spacing:.01em;
-  max-width:100%;box-shadow:var(--shadow);
-}
+.clientline{font-size:17px;font-weight:500;margin:0;max-width:80ch;}
 
 .contact{padding-bottom:clamp(40px,6vw,64px);}
-.contact .cols{align-items:start;}
-.contact .item{border-left-color:#000;}
 .contact .item p{font-size:15px;}
 .contact a{text-decoration:underline;}
 .contact a:hover{color:var(--accent);}
 .foot{border-top:1px solid var(--line);padding:24px 0;}
 .foot p{margin:0;font-size:13px;color:var(--muted);}
 
-/* Sanftes Einblenden – per JS gesetzt, ohne JS bleibt alles sichtbar */
-.reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease;}
-.reveal.in{opacity:1;transform:none;}
-
 /* ================= Handy ================= */
 @media (max-width:900px){
   .steps{grid-template-columns:repeat(3,1fr);}
-  .hero-mark{opacity:.06;}
+  .hero-mark{opacity:.04;}
 }
 @media (max-width:640px){
   .topnav{display:none;}
-  body{padding-bottom:76px;}
+  body{padding-bottom:76px;}          /* Platz für den Balken unten */
   .scanbar{display:flex;justify-content:center;align-items:center;gap:10px;}
   .scan-steps{grid-template-columns:1fr;gap:8px;}
+  .scan-steps li{padding:10px 12px;}
   .shot{aspect-ratio:1/1;max-height:none;}
-  .facts-grid{grid-template-columns:1fr;gap:14px;}
+  .facts-grid{grid-template-columns:1fr;gap:18px;}
   .cols{grid-template-columns:1fr;}
   .steps{grid-template-columns:repeat(2,1fr);}
   .cta-row .btn{flex:1 1 100%;}
-  .convince-strip{font-size:15px;padding:16px var(--pad);}
-  .hero-mark{width:78vw;top:auto;bottom:-30px;}
+  .hero-mark{width:70vw;top:auto;bottom:-30px;}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto;}
   *{transition:none!important;animation:none!important;}
-  .reveal{opacity:1;transform:none;}
 }
