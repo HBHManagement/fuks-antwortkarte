@@ -90,6 +90,15 @@ async function mailToFuks({ file, firma, name, email, ip }) {
 
 const app = express();
 app.disable('x-powered-by');
+
+// Nicht indexieren: die Seite ist ausschließlich über den Link im Brief erreichbar.
+// Der HTTP-Header ist die stärkste Ansage; robots.txt und Meta-Tag stehen zusätzlich.
+app.use((_req, res, next) => {
+  res.setHeader('X-Robots-Tag', 'noindex, nofollow, noarchive, nosnippet, noimageindex');
+  res.setHeader('Referrer-Policy', 'no-referrer');
+  next();
+});
+
 app.use(express.json({ limit: '64kb' }));
 app.use(express.static(path.join(__dirname, 'public'), { extensions: ['html'], maxAge: 0, etag: true }));
 

@@ -22,8 +22,17 @@ Dockerfile           Deploy auf Coolify (Node 22, Port 3000, Volume /data)
    Ohne HTTPS fällt der Knopf automatisch auf die Fotoauswahl des Systems zurück.
 3. Firma eintragen, senden. Das Bild wird im Browser auf max. 2200 px verkleinert.
 
-## Umgebungsvariablen
+## Nicht in Suchmaschinen
 
+Die Seite ist nur über den Link im Brief erreichbar und soll nirgends auftauchen:
+
+- `public/robots.txt` – `Disallow: /` für alle Crawler (inkl. GPTBot, ClaudeBot, CCBot, archive.org)
+- `<meta name="robots">` und `googlebot` im Kopf der Seite
+- HTTP-Header `X-Robots-Tag: noindex, nofollow, noarchive, nosnippet, noimageindex`
+  (gesetzt in `server.js`, gilt für jede Antwort)
+- `Referrer-Policy: no-referrer`, damit die Adresse nicht über Fremdaufrufe (z. B. Google Fonts) weitergegeben wird
+
+## Umgebungsvariablen
 | Variable | Standard | Zweck |
 |---|---|---|
 | `PORT` | 3000 (Docker) / 8090 (lokal) | HTTP-Port |
