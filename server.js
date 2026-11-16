@@ -14,7 +14,15 @@ const ADMIN_TOKEN = process.env.ADMIN_TOKEN || '';
 const MAX_MB = Number(process.env.MAX_MB || 20);
 const MAIL_TO = process.env.MAIL_TO || 'kontakt@fuks.org';
 
-fs.mkdirSync(UPLOAD_DIR, { recursive: true });
+// Ablage anlegen und sofort prüfen – ein falsch berechtigtes Volume soll beim
+// Start auffallen und nicht erst beim ersten Foto des Kunden.
+try {
+  fs.mkdirSync(UPLOAD_DIR, { recursive: true });
+  fs.accessSync(UPLOAD_DIR, fs.constants.W_OK);
+  console.log(`[start] Ablage: ${UPLOAD_DIR} (beschreibbar)`);
+} catch (err) {
+  console.error(`[start] FEHLER: ${UPLOAD_DIR} ist nicht beschreibbar – ${err.message}`);
+}
 const INDEX = path.join(UPLOAD_DIR, 'index.jsonl');
 
 const ALLOWED = new Set(['image/jpeg', 'image/png', 'image/webp', 'image/heic', 'image/heif', 'image/jpg']);
@@ -95,6 +103,7 @@ app.post('/api/antwortkarte', (req, res) => {
 
   upload.single('foto')(req, res, async (err) => {
     if (err) {
+      console.error('[upload]', err.code || '', err.message);
       const msg = err.code === 'LIMIT_FILE_SIZE'
         ? `Das Bild ist größer als ${MAX_MB} MB.`
         : 'Das Bild konnte nicht angenommen werden.';

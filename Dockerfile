@@ -12,7 +12,9 @@ COPY . .
 # Coolify setzt PORT; Standard hier 3000
 ENV PORT=3000
 ENV UPLOAD_DIR=/data/antwortkarten
-RUN mkdir -p /data/antwortkarten
+# Ordner im Image anlegen und dem Container-User geben – ein leeres
+# Coolify-Volume übernimmt beim Anlegen Inhalt und Rechte aus dem Image.
+RUN mkdir -p /data/antwortkarten && chown -R node:node /data
 VOLUME ["/data"]
 
 EXPOSE 3000
