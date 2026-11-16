@@ -91,7 +91,7 @@ async function mailToFuks({ file, firma, name, email, ip }) {
 const app = express();
 app.disable('x-powered-by');
 app.use(express.json({ limit: '64kb' }));
-app.use(express.static(path.join(__dirname, 'public'), { extensions: ['html'], maxAge: '1h' }));
+app.use(express.static(path.join(__dirname, 'public'), { extensions: ['html'], maxAge: 0, etag: true }));
 
 app.get('/api/health', (_req, res) => res.json({ ok: true, uptime: Math.round(process.uptime()) }));
 
